@@ -1,18 +1,66 @@
- Explicar de forma ordenada los roles y responsabilidades, los WDs en los que ocurren las cosas. Es decir poner que el ultimo Viernes de cada mes se mandan los ficheros via SFTP, san uk los recibe y hace automaticamente los contores de availability y quality (ese mismo Viernes). si esto falla (no se cumplen lo triggers) se mandan al responsible (Ahora David house) para que lo mire y diga si esta bien o no el fichero. Si esta mal por cualquier cosa ese mismo dia tiene que hablar con hometrack y asegurar que se envia como tarde el WD - 1 que se va a utilizar para calcular HPI y AVM para asegurar que ese WD-1 pasas los controles. Si esos controles no pasan y David house no da el ok, entonces la orden tiene que ser que se cojan los fichros del mes anterior.
- 
-Roles y Responsabilidades:
-Batch management(Pedro Fernandez)- desarollar el sftp entre Hometrack y Santader
-Data demand hub(prashant)- desarollar traslado de SFS a AWS
-CDO-ingestion(MIli, florez)*- implementar los controles
-Data Demand - triggers usand Control-M
-Hometrack- 3rd party provider, facilitate expected CSV files
- 
-Steps:
-Working day (last Friday of every month), control-m scans SFS looking for the 7 specific files
-If not found on that working day, an email is sent to the data owner, as warning. Proceed to alternative solution 
-When files found, apply triggers to evaluate controls (that working day)
-If data quality is poor (failed controls), an email is sent to the data owner to approve or not the data ingestion 
-If too poor, data owner must communicate with 3rd party provider and resend information by WD -1
-If new set of data is too poor and not authorized by Data owner, previously received approved files will be used instead
- 
- 
+## Roles and Responsibilities
+
+### Hometrack (3rd Party Provider)
+
+Responsible for generating and delivering the expected 7 CSV files through the agreed SFTP process within the established timelines.
+
+### Batch Management – Pedro Fernandez
+
+Responsible for the development and maintenance of the SFTP integration between Hometrack and Santander UK.
+
+### CDO – Ingestion Team (Mili Florez)
+
+Responsible for implementing and maintaining the availability and quality controls applied to the incoming files.
+
+### Data Demand
+
+Responsible for implementing and managing the control triggers executed through Control-M.
+
+### Data Demand Hub – Prashant
+
+Responsible for the development and support of the integration and transfer process from SFS into AWS environments.
+
+### Data Owner – David House
+
+Responsible for reviewing failed controls, validating data quality issues, approving or rejecting file ingestion, and coordinating remediation activities with Hometrack where required.
+
+---
+
+## Operational Process & Timeline
+
+The 7 Hometrack CSV files are delivered monthly through SFTP on the last Friday working day of each month.
+
+Once the files are received within Santander UK’s SFS environment, automated availability and quality controls are executed on the same working day using Control-M triggers.
+
+The controls validate:
+
+* File availability
+* Delivery timelines
+* File structure
+* Mandatory field population
+* Data quality thresholds
+* Data consistency required for HPI and AVM calculations
+
+### Control Validation Process
+
+1. **File Detection**
+   On the last working Friday of the month, Control-M scans the SFS environment looking for the expected 7 CSV files.
+
+2. **Availability Validation**
+   If one or more files are not received on the expected working day, an automatic warning email is sent to the Data Owner and the process proceeds to the agreed contingency review.
+
+3. **Quality Validation**
+   Once the files are detected, automated quality controls and validation triggers are executed on the same working day.
+
+4. **Control Failure Escalation**
+   If the controls fail or the quality thresholds are not met, an automatic notification is sent to the Data Owner (currently David House) to review the impacted files and decide whether the ingestion can proceed.
+
+5. **Remediation Process**
+   If the data is considered unacceptable, the Data Owner must contact Hometrack on the same working day and ensure that corrected files are resent no later than WD-1, which is the version used for HPI and AVM calculations.
+
+6. **Final Decision**
+   The resent files must successfully pass all controls before being approved for ingestion.
+
+7. **Fallback Scenario**
+   If the new files continue failing the controls and the Data Owner does not provide approval, the previously approved files from the prior month will be used as the fallback solution for downstream processing.
+
