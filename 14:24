@@ -1,0 +1,53 @@
+# 1. Introduction
+
+This document describes the control framework implemented for the Hometrack data migration process within Santander UK’s AWS environment as part of the Hybrid Mortgage initiative.
+
+The project focuses on ensuring the correct reception, validation, and processing of external data files received from Hometrack through a secure SFTP channel. The implemented controls are designed to verify that the files are delivered on time, contain valid and complete information, and comply with internal governance and regulatory requirements before entering Santander UK internal systems.
+
+Once the files successfully pass all validation and control checks, they are transferred into Santander’s SFS environment and subsequently integrated into AWS S3 for downstream processing and regulatory use cases.
+
+---
+
+# 2. Objective
+
+The objective of this project is to ensure that the migration and integration of Hometrack data is executed correctly, within the agreed deadlines, and maintaining consistency between the current (“As-Is”) and future (“To-Be”) environments.
+
+The project aims to:
+
+* Ensure the successful migration of Hometrack data through the defined SFTP process.
+* Guarantee that the same data and results are maintained between the As-Is and To-Be solutions.
+* Validate that all files are received in a timely manner and according to the expected delivery schedule.
+* Implement availability and data quality controls to ensure completeness, consistency, and integrity of the data.
+* Ensure that only files that successfully pass all controls are allowed into Santander UK’s SFS environment and later transferred into AWS S3.
+* Support governance, regulatory, and operational requirements associated with the Hybrid Mortgage process.
+
+The project currently manages the following Hometrack files:
+
+* Hometrack_EPR_Annual_format1
+* Hometrack_UK_Monthly_for1
+* Hometrack_EPR_Quarterly_f1
+* Hometrack_EPR_Quarterly_f2
+* Hometrack_EPR_Quarterly_f3
+* Hometrack_UK_Annual_format1
+* Hometrack_UK_Quarterly_f1
+
+These files are received from Hometrack with agreed delivery frequency and are subject to validation and control processes before being integrated into Santander UK platforms.
+
+---
+
+# 3. Scope
+
+The scope of this project includes the implementation, execution, and monitoring of controls over Hometrack data files received through SFTP and processed within Santander UK’s infrastructure.
+
+The controls are designed to ensure the correct migration and validation of data from Hometrack up to Santander UK’s SFS environment, where the validation process takes place.
+
+The scope includes:
+
+* Monitoring the end-to-end flow from Hometrack → SFTP → SFS → AWS S3.
+* Availability controls to ensure files arrive within the expected timeframes.
+* Data quality controls to validate completeness, consistency, structure, and integrity of the files received.
+* Ensuring that only files that successfully pass all controls are transferred into Santander UK’s SFS environment.
+* Preventing files that fail validation checks from entering Santander systems and redirecting them to the corresponding external provider process when required.
+* Supporting the migration from the current As-Is solution to the To-Be AWS-based architecture.
+* Coordination between technical, batch, cloud, governance, and business teams involved in the process.
+* Support for validation, governance approvals, and UAT activities related to the Hometrack integration and migration process.
