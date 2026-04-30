@@ -1,0 +1,18 @@
+ Explicar de forma ordenada los roles y responsabilidades, los WDs en los que ocurren las cosas. Es decir poner que el ultimo Viernes de cada mes se mandan los ficheros via SFTP, san uk los recibe y hace automaticamente los contores de availability y quality (ese mismo Viernes). si esto falla (no se cumplen lo triggers) se mandan al responsible (Ahora David house) para que lo mire y diga si esta bien o no el fichero. Si esta mal por cualquier cosa ese mismo dia tiene que hablar con hometrack y asegurar que se envia como tarde el WD - 1 que se va a utilizar para calcular HPI y AVM para asegurar que ese WD-1 pasas los controles. Si esos controles no pasan y David house no da el ok, entonces la orden tiene que ser que se cojan los fichros del mes anterior.
+ 
+Roles y Responsabilidades:
+Batch management(Pedro Fernandez)- desarollar el sftp entre Hometrack y Santader
+Data demand hub(prashant)- desarollar traslado de SFS a AWS
+CDO-ingestion(MIli, florez)*- implementar los controles
+Data Demand - triggers usand Control-M
+Hometrack- 3rd party provider, facilitate expected CSV files
+ 
+Steps:
+Working day (last Friday of every month), control-m scans SFS looking for the 7 specific files
+If not found on that working day, an email is sent to the data owner, as warning. Proceed to alternative solution 
+When files found, apply triggers to evaluate controls (that working day)
+If data quality is poor (failed controls), an email is sent to the data owner to approve or not the data ingestion 
+If too poor, data owner must communicate with 3rd party provider and resend information by WD -1
+If new set of data is too poor and not authorized by Data owner, previously received approved files will be used instead
+ 
+ 
