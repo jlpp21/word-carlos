@@ -1,0 +1,57 @@
+## Control Framework
+
+The control framework has been designed to ensure that all files received from Hometrack through SFTP are delivered completely, accurately, and within the agreed timelines before being integrated into Santander UK platforms.
+
+Two main categories of controls are applied throughout the process:
+
+* **Availability Controls**
+  Ensure that the expected files are received on time, with the correct naming convention, expected structure, and agreed delivery frequency.
+
+* **Quality Controls**
+  Ensure that the content of the files is complete, consistent, and suitable for downstream processing and calculations such as HPI and AVM.
+
+Controls are executed during the ingestion and validation stages before the files are accepted into SFS and AWS environments.
+
+A control is considered successful (“green”) when all predefined validation rules and thresholds are met. If any validation fails, the control is flagged as failed and an issue is raised for investigation and remediation.
+
+Typical validation triggers include:
+
+* Missing or delayed files
+* Empty or partially populated mandatory fields
+* Incorrect file structure or formatting
+* Values outside expected thresholds or tolerances
+* Data inconsistencies impacting downstream calculations
+
+Where a control fails, an automatic notification is sent to the Data Owner requesting investigation and resubmission of the impacted files if required.
+
+---
+
+## Type of Controls
+
+1. **Validation Controls**
+   Validation of file structure, mandatory fields, formats, and data consistency.
+
+2. **End-to-End Controls**
+   Verification that files are successfully transferred from Hometrack to SFS and AWS environments without data loss or corruption.
+
+3. **Availability Controls**
+   Monitoring of file delivery timelines, agreed frequency, and successful reception of all required files.
+
+---
+
+## Controls to be Performed
+
+Controls will be executed for each Hometrack file received through SFTP.
+
+The validation process includes checks related to:
+
+* File availability
+* File structure
+* Mandatory fields population
+* Data quality thresholds
+* End-to-end transfer validation
+* Successful integration into Santander UK environments
+
+If any control fails, the corresponding issue will be escalated and managed through the agreed remediation process.
+
+The following sections provide a detailed breakdown of the controls applied to each of the 7 Hometrack files received through SFTP.
