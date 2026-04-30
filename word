@@ -1,0 +1,40 @@
+# 1. Introduction
+
+This document describes the control framework implemented for the Hometrack data integration process within Santander UK’s AWS environment.
+
+The project is part of the broader Hybrid Mortgage initiative within Risk & Finance and focuses on ensuring the availability, integrity, and quality of external data received from Hometrack through a secure SFTP channel.
+
+The controls are designed to support regulatory and business requirements by ensuring that the files received are delivered on time, processed correctly, and validated before being consumed by downstream mortgages processes and regulatory models.
+
+The initiative also supports Santander UK’s ongoing migration from on-premise infrastructure to AWS, improving consistency, governance, and operational reliability across the end-to-end data flow.
+
+---
+
+# 2. Objective
+
+The objective of this project is to ensure and control the availability, completeness, and quality of Hometrack data integrated into Santander UK’s AWS platform.
+
+The project aims to:
+
+* Ensure that files are received successfully and within the expected delivery windows.
+* Validate that the information received is complete, accurate, and fit for purpose.
+* Implement availability and data quality controls across the end-to-end process.
+* Support regulatory compliance and internal Data Governance requirements.
+* Provide reliable and consistent data for mortgages processes and related risk models.
+
+The project also supports the operational monitoring and governance of the data flow between Hometrack, SFTP services, internal batch processes, and AWS environments.
+
+---
+
+# 3. Scope
+
+The scope of this project includes the implementation and monitoring of controls over Hometrack data files received via SFTP and processed within Santander UK’s AWS infrastructure.
+
+This includes:
+
+* Availability controls to monitor successful and timely file delivery.
+* Data quality controls to validate completeness, consistency, and integrity of the received data.
+* Monitoring of the end-to-end process from Hometrack to AWS.
+* Coordination across technical, batch, cloud, governance, and business teams involved in the delivery process.
+* Support for UAT and validation activities related to the Hometrack integration.
+* Tracking dependencies, governance approvals, and operational issues associated with the SFTP integration and AWS migration activities.
