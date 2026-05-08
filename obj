@@ -1,1 +1,21 @@
-scope: que los controles implementados asegures la correcta migracion de los datos desde hometrac y hasta SFS que es donde se realizan los controles, es decir, si todos los controles estan OK entra a SFS que es del santander, y si no, no entran. Si no pasan los controles pues pasan a un proveedor externo, y si entra a SFS luego va a aws s3. que los controles lleguen en tiempo y forma. Objetivo: que la migracion sea correcta y se ejcute en los deadloines establecidos asegurando losmismo datos en el as is y en el to be decir aqui que ficheros usamos y con que veracidad viene los 7 ficheros que entran desde hometrackson estos:
+Sure thing! Here is the email in English, keeping it professional while addressing the technical details from your chat:
+
+---
+
+**Subject:** RE: Differences between e9004_performance and mort_avm_valuation_partitions
+
+Hi Barnaby,
+
+Thanks for the meeting earlier and for sharing the files.
+
+We have now adapted the code to the new requirements. We are using the same data source you provided, and we’ve generated the `avm_factor` following the same logic as the SAS project.
+
+The values are now a much closer match. Any remaining slight discrepancies are due to the fact that we are using `bigdecimal(38,18)` for our calculations, whereas SAS has a lower precision capacity.
+
+We hope you find these results more accurate than the previous version. Please let us know if you have any technical questions; we’d be happy to follow up via email with the exact logic used in the code.
+
+I will be sending over the Excel file shortly.
+
+Best regards,
+
+[Your Name]
