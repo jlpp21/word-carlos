@@ -1,4 +1,6 @@
-Sure thing! Here is the email in English, keeping it professional while addressing the technical details from your chat:
+Hecho. He integrado la nueva información sobre el proceso de Sonia y la lógica del valor máximo (`mes-1`) de forma natural en el texto.
+
+Aquí tienes la versión actualizada:
 
 ---
 
@@ -11,6 +13,8 @@ Thanks for the meeting earlier and for sharing the files.
 We have now adapted the code to the new requirements. We are using the same data source you provided, and we’ve generated the `avm_factor` following the same logic as the SAS project.
 
 The values are now a much closer match. Any remaining slight discrepancies are due to the fact that we are using `bigdecimal(38,18)` for our calculations, whereas SAS has a lower precision capacity.
+
+Additionally, we noticed in the SAS code that Sonia introduces certain data manually. To ensure consistency, we have reviewed those figures and applied the logic of using the **maximum value for each month (using month-1)**, as we agreed on previous meetings.
 
 We hope you find these results more accurate than the previous version. Please let us know if you have any technical questions; we’d be happy to follow up via email with the exact logic used in the code.
 
