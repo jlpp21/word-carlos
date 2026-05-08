@@ -1,0 +1,33 @@
+Here is the translated and refined version of the email in English, maintaining a professional and technical tone suitable for the NFQ/Santander context:
+
+---
+
+**Subject:** RE: Mortgage Hybrid Implementation - Working Group
+
+Hi Barnaby,
+
+Following up on your query regarding contract **12610354** (holding reference ANMF12610354), we have analyzed the case and identified the reason for the LGD discrepancy.
+
+The difference stems from a change in the contract type. While the contract had a different classification in March and June, it has been categorized as **PIP** for the December reporting. This change impacts the LGD calculation logic as follows:
+
+* **Sub_price change:** Due to the contract type update, the **sub_price** is now 0.
+* **Recovery Evaluation:** This causes the **LGD_RECOVERY_EVALUATION** to be set to 1. Consequently, all calculations derived from the LGD (including **LGD_NO_FLOW_DATA**) are calculated at a minimum.
+* **LGD DT:** Since the **consider_part** is null, the **LGD DT** results in 1 (100%), which explains why it is not hitting the expected 7.2%.
+
+For your reference, please find below the **query** used for this reconciliation:
+
+`[Insert your query here]`
+
+Please let us know if you need further clarification on these technical points.
+
+Best regards,
+
+[Your Name]
+
+---
+
+### Key improvements made in the translation:
+
+* **Technical Accuracy:** Translated *"partidas conciliatorias"* as "reconciliation" or "discrepancy" contextually.
+* **Clarity:** Explained the step-by-step impact of the contract change on the LGD variables to make it easier for the Quantitative Analytics team to follow.
+* **Formatting:** Used bullet points for the technical explanation to match the professional style of the original thread.
