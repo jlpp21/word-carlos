@@ -1,42 +1,88 @@
-Perfecto, he añadido la mención a **Andy** para dejar claro que, si se decide cambiar el código, también es necesario coordinarse con él. Aquí tienes el borrador final en inglés para que se lo pases a tu jefe (Guillermo) o lo envíes directamente:
+Para los accesos es suuuper util esta pag de confluence New Joiner On-Boarding Process - Avalon - Confluence
+Para pedir licencia yposteriormente acceso al board vas a necesitar esto
+Follow below steps to request new Atlassian licences:
+1.Log into San IT portal using your domain credentials (E/C Number and password). 
+				Aquí pedí Jira y Confluence
+2. Pedir acceso al board de capital
+para poder lanzar queries en AWS Athena 
+necesitamos pedir acesso a  sdlc_cdfcapitallake_businessowner
+	1. How to get access to Athena                               
+              Go to myaccess2 -->   Manage My Access --> sdlc_cdfcapitallake_businessowner                                
+           Bisiness Justification : Could you please provide access to Athena for querying Capital databases to work on day-to-day activities.    
+				SailPoint IdentityIQ - Home
+				
+ 
+     2. Please login with "local-cdf-capitallake-test-data-role" role to access Athena in Dev/Pre-Prod/Prod environment          
+         Note: Please use Region as "Europe/London" and Workgroup as "cdf-capitallake"
+	• AD Group/Hadoop Access – Raise request in MyIT
+      Path : MyIT --> myAccess --> Database --> Hadoop --> Manage Access -->
+                 Request Hadoop Access
+myIT - Home
+      For more details : To access Data Lake
+	• Below are list of AD Groups
+	DATA_HADOOP_CAPITAL
+	DATA_HADOOP_COMMON_CARDS_RETAIL_FUL
+	DATA_HADOOP_ANALYTICS_SSH_ACCESS
+	DATA_HADOOP_CAPITAL_CORP
+	DATA_HADOOP_LOANS_ALFA
+	DATA_HADOOP_RET_REFERENCE_FULL
+	DATA_HADOOP_RISK_FINANCE_CL_CUSTOMER_FULL
+	DATA_HADOOP_FINANCE_ACCOUNTING_FULL
+	DATA_HADOOP_SGCB_CAPITAL_FMBDR_FULL
+	DATA_HADOOP_EXP_CAPITAL_TOOLS_FULL
+	DATA_HADOOP_RET_TRANSACTION_FULL
+	DATA_HADOOP_RISK_FINANCE_CL_FULL
+	DATA_HADOOP_RET_CUSTOMER_FULL
+	DATA_HADOOP_COLLECTIONS_FULL
+	DATA_HADOOP_EXP_CAPITAL_FULL
+	DATA_HADOOP_RET_LENDING_FULL
+	DATA_HADOOP_CAPITAL_FULL
+	DATA_HADOOP_RISK_DM_FULL
+	DATA_HADOOP_RISK_FULL
+	DATA_HADOOP_RET_REFERENCE
+              DATA_HADOOP_DATA_VAULT
+             DATA_HADOOP_DATA_VAULT_FULL
+             DATA_HADOOP_STRUCTURAL
+             DATA_HADOOP_STRUCTURAL_FULL
+DATA_HADOOP_EXP_CAPITAL_FULL
+DATA_HADOOP_EXP_FINANCE_FUL
+				
+HOW TO - Get access to AWS Services. - Avalon - Confluence 
+Mercury access would be through myIT request -> myaccess -> windows-> folder
+then follow the form
+Para tema Confluence y Jira: Software Development Life Cycle - How to Request Confluence or Jira Account
+How to Request Confluence or Jira Account.aspxProcessLab-TeamSupport > How to Request Confluence or Jira Account.aspx
+SailPoint IdentityIQ - Home
 
----
 
-**Subject:** RE: Mortgage Hybrid Implementation - Working Group
 
-Hi Barnaby,
 
-Thank you for the detailed breakdown and the reference documentation.
+myIT - Home
+ 
+Esta es el directorio del proyecto anterior: Hybrid Model - SAN UK - NFQ team - Documents - 08. Uk Hybrid Model - All Documents
+ 
+La epica (JIRA) de Sunsetting: [CAPITAL-1249] Sunsetting and RDS Changes - Jira
+ 
+Service Now - Pedir tickets - Incidents | ServiceNow
+ 
+Myaccess - myAccess
 
-Following your last email, we have performed a thorough review of the logic to ensure full alignment with the **Methodology Report (DDP)**, specifically page 33.
+Myaccess2 - SailPoint IdentityIQ - Access Requests
 
-To answer your question regarding the AVM confidence checks: **Yes, we can confirm that our code matches the DDP logic**, including the `current_avm_confidence` validations. To make this clearer, here is the logic we are applying:
+Athena (AWS) - ROLES
 
-`[PEGA AQUÍ TU BLOQUE DE CÓDIGO]`
+[METADATA-6102] Source Tracker - Ingestion to AWS from SFS Mainframe - Hybrid Models - Jira para que lo Tengan a la mano. Es el jira del sourcetracker
 
-By explicitly following this structure, we handle the three key scenarios:
 
-1. **Scenario 1:** Priority is given to `sugg_sale_price` when it is populated and valid (not missing/zero).
-2. **Scenario 2:** If the price is missing or zero, we check the AVM confidence levels to determine if we use `current_valuation_amt_avm`.
-3. **Scenario 3:** If neither applies, the logic falls back to the standard `current_valuation_amt` / HPI.
+ROLES
 
-Regarding the **materiality** of the proposed change (`sugg_sale_price > 0`):
+Es el 3ro end 227
 
-* We acknowledge the calculated impact: an LGD increase (from 12.76% to 13.84%) and the resulting **£18.66m RWA / £1.5m capital increase**.
-* As you correctly pointed out, implementing this would be a **new requirement**, triggering a new UAT, official sign-off, and IVT.
 
-To better understand the scope, would the UAT and IVT be required only for the 131 cases identified in December, or would we need to execute a full UAT for LGD or the entire Capital model? Additionally, we would need to **align with Andy** regarding any potential code changes.
 
-In case you decide to proceed with this change, we would like to schedule a brief meeting to align on the next steps, timelines, and the coordination with Andy.
+Aqui esta la nueva tabla de barnaby
+ATHENA
 
-Best regards,
+JIRA:
+[METADATA-6102] Source Tracker - Ingestion to AWS from SFS Mainframe - Hybrid Models - Jira
 
-Jorge Pérez.
-
----
-
-### ¿Qué hemos incluido ahora?
-
-1. **Alineación con Andy:** Se especifica que cualquier cambio en el código requiere estar en sintonía con él (*"align with Andy regarding any potential code changes"*).
-2. **Reunión de coordinación:** Se menciona que la reunión también servirá para coordinar ese trabajo con Andy.
-3. **Dudas de alcance:** Se mantiene la pregunta de si la UAT es solo para los 131 casos o para todo el capital, que es lo que más tiempo podría quitaros.
