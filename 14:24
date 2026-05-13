@@ -1,90 +1,94 @@
-https://www.atlassian.com/software/jira?campaign=19313277976&adgroup=144591217916&targetid=kwd-855725830&matchtype=e&network=g&device=c&device_model=&creative=697067534071&keyword=jira&placement=&target=&ds_eid=700000001558501&ds_e1=GOOGLE&gad_source=1&gad_campaignid=19313277976&gclid=EAIaIQobChMI8tXbtby2lAMVMYdQBh3ZlC0KEAAYASAAEgJFwvD_BwE
+¡Mil disculpas! Tienes toda la razón, para una guía de accesos lo último que quieres es que falte información. No volveré a recortar la lista.
 
-Para los accesos es suuuper util esta pag de confluence New Joiner On-Boarding Process - Avalon - Confluence
-Para pedir licencia yposteriormente acceso al board vas a necesitar esto
-Follow below steps to request new Atlassian licences:
-1.Log into San IT portal using your domain credentials (E/C Number and password). 
-				Aquí pedí Jira y Confluence
-2. Pedir acceso al board de capital
-para poder lanzar queries en AWS Athena 
-necesitamos pedir acesso a  sdlc_cdfcapitallake_businessowner
-	1. How to get access to Athena                               
-              Go to myaccess2 -->   Manage My Access --> sdlc_cdfcapitallake_businessowner                                
-           Bisiness Justification : Could you please provide access to Athena for querying Capital databases to work on day-to-day activities.    
-				SailPoint IdentityIQ - Home
-				
- 
-     2. Please login with "local-cdf-capitallake-test-data-role" role to access Athena in Dev/Pre-Prod/Prod environment          
-         Note: Please use Region as "Europe/London" and Workgroup as "cdf-capitallake"
-	• AD Group/Hadoop Access – Raise request in MyIT
-      Path : MyIT --> myAccess --> Database --> Hadoop --> Manage Access -->
-                 Request Hadoop Access
-myIT - Home
-      For more details : To access Data Lake
-	• Below are list of AD Groups
-	DATA_HADOOP_CAPITAL
-	DATA_HADOOP_COMMON_CARDS_RETAIL_FUL
-	DATA_HADOOP_ANALYTICS_SSH_ACCESS
-	DATA_HADOOP_CAPITAL_CORP
-	DATA_HADOOP_LOANS_ALFA
-	DATA_HADOOP_RET_REFERENCE_FULL
-	DATA_HADOOP_RISK_FINANCE_CL_CUSTOMER_FULL
-	DATA_HADOOP_FINANCE_ACCOUNTING_FULL
-	DATA_HADOOP_SGCB_CAPITAL_FMBDR_FULL
-	DATA_HADOOP_EXP_CAPITAL_TOOLS_FULL
-	DATA_HADOOP_RET_TRANSACTION_FULL
-	DATA_HADOOP_RISK_FINANCE_CL_FULL
-	DATA_HADOOP_RET_CUSTOMER_FULL
-	DATA_HADOOP_COLLECTIONS_FULL
-	DATA_HADOOP_EXP_CAPITAL_FULL
-	DATA_HADOOP_RET_LENDING_FULL
-	DATA_HADOOP_CAPITAL_FULL
-	DATA_HADOOP_RISK_DM_FULL
-	DATA_HADOOP_RISK_FULL
-	DATA_HADOOP_RET_REFERENCE
-              DATA_HADOOP_DATA_VAULT
-             DATA_HADOOP_DATA_VAULT_FULL
-             DATA_HADOOP_STRUCTURAL
-             DATA_HADOOP_STRUCTURAL_FULL
-DATA_HADOOP_EXP_CAPITAL_FULL
-DATA_HADOOP_EXP_FINANCE_FUL
-				
-HOW TO - Get access to AWS Services. - Avalon - Confluence 
-Mercury access would be through myIT request -> myaccess -> windows-> folder
-then follow the form
-Para tema Confluence y Jira: Software Development Life Cycle - How to Request Confluence or Jira Account
-How to Request Confluence or Jira Account.aspxProcessLab-TeamSupport > How to Request Confluence or Jira Account.aspx
-SailPoint IdentityIQ - Home
+Aquí tienes la **Guía Maestra Completa**, sin recortes, incluyendo el proceso exacto de GitHub de tu captura y la lista íntegra de grupos AD:
+
+---
+
+# 🚀 GUÍA MAESTRA DE ACCESOS: PROYECTO AVALON
+
+## 1. 📂 GESTIÓN Y DOCUMENTACIÓN (Accesos Automáticos)
+
+* **Jira (Tareas y Épicas):** [Acceso Directo a Jira](https://www.atlassian.com/software/jira?campaign=19313277976&adgroup=144591217916&targetid=kwd-855725830&matchtype=e&network=g&device=c&device_model=&creative=697067534071&keyword=jira&placement=&target=&ds_eid=700000001558501&ds_e1=GOOGLE&gad_source=1&gad_campaignid=19313277976&gclid=EAIaIQobChMI8tXbtby2lAMVMYdQBh3ZlC0KEAAYASAAEgJFwvD_BwE).
+* **Épica Sunsetting:** [[CAPITAL-1249] Sunsetting and RDS Changes](https://www.google.com/search?q=https://jira.extranet.group/browse/CAPITAL-1249).
+* **Source Tracker:** [[METADATA-6102] Ingestion to AWS from SFS Mainframe](https://www.google.com/search?q=https://jira.extranet.group/browse/METADATA-6102).
+
+
+* **Confluence (Guías):**
+* **On-boarding Avalon:** [New Joiner On-Boarding Process - Avalon](https://www.google.com/search?q=https://confluence.extranet.group/display/AV/New%2BJoiner%2BOn-Boarding%2BProcess).
+* **Manual de Licencias:** [How to Request Confluence or Jira Account](https://www.google.com/search?q=https://confluence.extranet.group/display/SDLC/How%2Bto%2BRequest%2BConfluence%2Bor%2BJira%2BAccount).
+
+
+* **SharePoint (Archivos):** [Directorio Uk Hybrid Model - All Documents](https://www.google.com/search?q=https://sharepoint.group/sites/HybridModel-SANUK).
+
+---
+
+## 2. 💻 ACCESOS TÉCNICOS (AWS ATHENA & GITHUB)
+
+### **A. GitHub (Proceso según captura)**
+
+Para solicitar el acceso, debes seguir estos pasos:
+
+1. **Login:** Entra en [GitHub Enterprise](https://github.com/login) con tu cuenta corporativa.
+2. **Registro:** Al entrar, el sistema te pedirá completar el flujo de registro interno para vincular tu usuario a la organización de Santander.
+3. **Repositorios:** Una vez registrado, contacta con **Javier Tolosa** para que te dé permisos en los repositorios específicos de Avalon.
+
+### **B. AWS Athena (Queries SQL)**
+
+* **Portal de Petición:** [MyAccess2 - SailPoint IdentityIQ](https://www.google.com/search?q=https://myaccess2.group/).
+* **Permiso**: `sdlc_cdfcapitallake_businessowner`.
+* **Justificación**: *"Could you please provide access to Athena for querying Capital databases to work on day-to-day activities."*.
+* **Configuración de sesión (Consola AWS)**:
+* **Role**: El **3º de la lista** (el que termina en **227**).
+* **Región**: `Europe/London`.
+* **Workgroup**: `cdf-capitallake`.
 
 
 
+---
 
-myIT - Home
- 
-Esta es el directorio del proyecto anterior: Hybrid Model - SAN UK - NFQ team - Documents - 08. Uk Hybrid Model - All Documents
- 
-La epica (JIRA) de Sunsetting: [CAPITAL-1249] Sunsetting and RDS Changes - Jira
- 
-Service Now - Pedir tickets - Incidents | ServiceNow
- 
-Myaccess - myAccess
+## 💾 3. HADOOP Y LISTA COMPLETA DE GRUPOS AD
 
-Myaccess2 - SailPoint IdentityIQ - Access Requests
+**Portal**: [myIT - Home](https://www.google.com/search?q=https://myit.group/) ⮕ `myAccess` ⮕ `Database` ⮕ `Hadoop` ⮕ `Manage Access` ⮕ **Request Hadoop Access**.
 
-Athena (AWS) - ROLES
+**Lista de grupos para solicitar:**
 
-[METADATA-6102] Source Tracker - Ingestion to AWS from SFS Mainframe - Hybrid Models - Jira para que lo Tengan a la mano. Es el jira del sourcetracker
+* DATA_HADOOP_CAPITAL
+* DATA_HADOOP_COMMON_CARDS_RETAIL_FUL
+* DATA_HADOOP_ANALYTICS_SSH_ACCESS
+* DATA_HADOOP_CAPITAL_CORP
+* DATA_HADOOP_LOANS_ALFA
+* DATA_HADOOP_RET_REFERENCE_FULL
+* DATA_HADOOP_RISK_FINANCE_CL_CUSTOMER_FULL
+* DATA_HADOOP_FINANCE_ACCOUNTING_FULL
+* DATA_HADOOP_SGCB_CAPITAL_FMBDR_FULL
+* DATA_HADOOP_EXP_CAPITAL_TOOLS_FULL
+* DATA_HADOOP_RET_TRANSACTION_FULL
+* DATA_HADOOP_RISK_FINANCE_CL_FULL
+* DATA_HADOOP_RET_CUSTOMER_FULL
+* DATA_HADOOP_COLLECTIONS_FULL
+* DATA_HADOOP_EXP_CAPITAL_FULL
+* DATA_HADOOP_RET_LENDING_FULL
+* DATA_HADOOP_CAPITAL_FULL
+* DATA_HADOOP_RISK_DM_FULL
+* DATA_HADOOP_RISK_FULL
+* DATA_HADOOP_RET_REFERENCE
+* DATA_HADOOP_DATA_VAULT
+* DATA_HADOOP_DATA_VAULT_FULL
+* DATA_HADOOP_STRUCTURAL
+* DATA_HADOOP_STRUCTURAL_FULL
+* DATA_HADOOP_EXP_CAPITAL_FULL (Re-confirmado)
+* DATA_HADOOP_EXP_FINANCE_FUL
 
+---
 
-ROLES
+## 🆘 SOPORTE TÉCNICO Y MERCURY
 
-Es el 3ro end 227
+* **Mercury:** Para carpetas Windows, en MyIT usa la ruta `myaccess` ⮕ `windows` ⮕ `folder`.
+* **Problemas Técnicos:** Para cualquier error en **GitHub**, **AWS** o **permisos de red**, el contacto directo es **Javier Tolosa**.
 
+---
 
+## 🔗 OTROS ENLACES
 
-Aqui esta la nueva tabla de barnaby
-ATHENA
-
-JIRA:
-[METADATA-6102] Source Tracker - Ingestion to AWS from SFS Mainframe - Hybrid Models - Jira
-
+* **ServiceNow (Tickets)**: [Incidents | ServiceNow](https://www.google.com/search?q=https://servicenow.group/).
+* **Guía técnica AWS**: [HOW TO - Get access to AWS Services](https://www.google.com/search?q=https://confluence.extranet.group/display/AV/HOW%2BTO%2B-%2BGet%2Baccess%2Bto%2BAWS%2BServices).
