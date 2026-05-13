@@ -1,44 +1,60 @@
-Exacto, entiendo perfectamente el matiz de Guillermo. Barnaby es quien tiene la última palabra sobre si el impacto financiero (los £1.5m de capital) compensa el "coste" de retrasar el proyecto y repetir el UAT.
+Controles:
+	- Tenemos mañana 12 de mayo 3 calls con los distintos equipo en las que nos acompañara Cristina, una vez estemos alineados, actualizamos excels/words y vemos nect steps avisarle a carlos mora.
+	- Javier: entender cómo hacen controles del batch (controles de CIO que si fallan se interrumpe la carga hasta que se solucione o alguien de el ok). 
+	- Proceso, quien lo cosntruye, por donde se pasan, service now, batch pasa por change request coordinan lo q hay por detrás.
+	
+	El resumen: 
+		• Mili: preguntar por un ejemplo de "Control Operating Model"
+		• Javier: entender cómo hacen controles del batch (controles de CIO que si fallan se interrumpe la carga hasta que se solucione o alguien de el ok)
+		Ddq controles una vez tablas cargadas.
+		Queremos controles de batch que la tabla no se carga
+		Control del batch: 
+		Nuevas tablas nuevas metricas: 
+		Guille: diseño inicial transmision desde hometrack
+		Maria de los angeles, diseño que marco lo tuvo que haber dejado diseño de la arquitectura
+		• Hbal con guille pidele la arquitectura y saber en que quedo y si alcanzo tener la aprobacion. Una vez tengamos las tablas, definir metricas guille ha trabajado con metricas de DQ.
+		• Dq va a postgre unos controles y luego hay otra que es una validacion tecnica que si falla va al batch o algo hay que definirlo, y lo otro es a donde van a llegar los ficheros.
+		1. Arquitectura hay que moverlo.
+		2. Edwin molina tambien tiene informacion.
+		Luego metricas DQ: se generan , se definen y se guardan en postger.
+		Validaciones: tecnicamente dentro de nuestro software, antes de escrbir en alguna de las tablas o el batch siga, si hay problema se detecta.
+		Nuevas metricas a travez de jira
+		• Kam: proceso de reporte de controles de calidad (controles de CDO, solo se reportan e investigan, no interrumpen ejecuciones)
+		Debemos hacer controles end to end. Proceso de reportar errores, metricas.
+		
+		No nulls en la tabla. Tenemos una reporting table common layer
+		Capital take risk it
+		Valores validos, si hay un fichero flagging is a customers fechas.
+		Fechas, enero 2000
+		Blancos
+		Nulls
+		Todo esto va a business it area
+		Data comming from commos layer-
+		En el tiempo establecido
+		Threshold prices tambien re revisan
+		Todos los valores end to end en los controles para ver que esten bien.
+		It team hace el devolpe dde los controles??? Y nosotros recibimos la frecuencia y la compartimos con ellos o con business? Both, 
+		Necesitamos business reference people, to share resutls after a business chack. 
+		Size of table and name too
+		Nos debe enviar un input, y luego todo a uat bao process
 
-He ajustado la última parte del correo para que quede claro que **la pelota está en su tejado** y que tú estás esperando que él valide si seguimos adelante con el cambio o no.
+El resumen: 
+Mili: preguntar por un ejemplo de "Control Operating Model"
+Javier: entender cómo hacen controles del batch (controles de CIO que si fallan se interrumpe la carga hasta que se solucione o alguien de el ok)
+Kam: proceso de reporte de controles de calidad (controles de CDO, solo se reportan e investigan, no interrumpen ejecuciones)
 
-Aquí tienes la versión final en inglés para enviar:
+Las notas que he cogido:
+Definition between hybrid project + DQ
+Hybrid project to create metrics
+DQ UAT + template/results view
+To check results with hybrid project IT
+Move everything to production (Hybrid project IT)
+To share with business at the agreed frequency. Business should establish thresholds, "impacts" and decide when to investigate
 
----
 
-**Subject:** RE: Mortgage Hybrid Implementation - Working Group
 
-Hi Barnaby,
-
-Thank you for the detailed breakdown and the reference documentation.
-
-Following your last email, we have performed a thorough review of the logic to ensure full alignment with the **Methodology Report (DDP)**, specifically page 33.
-
-To answer your question regarding the AVM confidence checks: **Yes, we can confirm that our code matches the DDP logic**, including the `current_avm_confidence` validations. To make this clearer, here is the logic we are applying:
-
-`[PEGA AQUÍ TU BLOQUE DE CÓDIGO]`
-
-By explicitly following this structure, we handle the three key scenarios:
-
-1. **Scenario 1:** Priority is given to `sugg_sale_price` when it is populated and valid (not missing/zero).
-2. **Scenario 2:** If the price is missing or zero, we check the AVM confidence levels to determine if we use `current_valuation_amt_avm`.
-3. **Scenario 3:** If neither applies, the logic falls back to the standard `current_valuation_amt` / HPI.
-
-Regarding the **materiality** of the proposed change (`sugg_sale_price > 0`):
-
-* We acknowledge the calculated impact: an LGD increase (from 12.76% to 13.84%) and the resulting **£18.66m RWA / £1.5m capital increase**.
-* As you correctly pointed out, implementing this would be a **new requirement**, triggering a new UAT, official sign-off, and IVT.
-
-Given the impact on the **implementation timeline and the additional UAT phase**, we would like to confirm your view on whether to proceed with this technical change or maintain the current logic aligned with the DDP to meet the existing deadlines.
-
-Best regards,
-
-[Tu Nombre]
-
----
-
-### ¿Por qué esta versión es la que necesitas?
-
-1. **Aclara el AVM:** Barnaby se queda tranquilo viendo que la confianza del AVM sí está en el código.
-2. **Los 3 Casos:** Quedan explicados paso a paso.
-3. **Le pasas la decisión:** La frase *"we would like to confirm your view on whether to proceed"* le dice directamente a Barnaby: **"Tú decides si el cambio merece la pena teniendo en cuenta el UAT y los tiempos"**, que es exactamente lo que te pidió Guillermo.
+Que los pasos ideales son:
+Revisar arquitectura y cerrar foto completa de tablas (con Javier)
+Definir validaciones técnicas (con Javier)
+Definir DQ (con Miguel)
+Acordar quién de business va a querer recibir la información de DQ para pasarselo a Kam y una vez esté "live" podamos mandarles las métricas
