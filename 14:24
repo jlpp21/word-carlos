@@ -1,28 +1,13 @@
-Here are the templates in English, tailored for both JIRA and email.
-
-### 1. JIRA Comment
-
-*Since you are already inside the ticket context, this can be direct and concise.*
-
-> Hi David,
-> Hope you are well.
-> Regarding this work item for the Hometrack CSV ingestion, Imran Vali is ready to raise the CDF request to create the new data product tag value **"Hometrack"**.
-> Could you please reply directly to this ticket to confirm your ownership/approval as the proposed owner/HOD for this tag so we can proceed?
-> Many thanks,
-> [Your Name]
-
----
-
-### 2. Email Template
-
-*A bit more structured, including a clear subject line and context.*
-
-> **Subject:** Ownership Confirmation Required: Data Product Tag "Hometrack"
-> Hi David,
-> Hope you are well.
-> I am writing regarding the ingestion of the 7 Hometrack CSV files into AWS for the Hybrid Mortgage model. Imran Vali is ready to raise the CDF request for the creation of the new data product tag value **"Hometrack"**.
-> Before he can proceed, he needs confirmation/approval from you as the proposed owner/HOD for this tag.
-> Could you please reply to this email or leave a quick comment on the JIRA ticket to confirm your ownership?
-> Thank you very much for your help.
-> Best regards,
-> [Your Name]
+Logic:
+if default = 1 and pip_ind = "Y" and sugg_sale_price ne . then do;
+lgd_recovery_valuation = sugg_sale_price;
+lgd_avm_hpi_flag = 'AVM';
+end;
+else if current_avm_confidence in (., 0) or current_valuation_amt_avm in (., 0) then do;
+lgd_recovery_valuation = current_valuation_amt;
+lgd_avm_hpi_flag = 'HPI';
+end;
+else do;
+lgd_recovery_valuation = current_valuation_amt_avm;
+lgd_avm_hpi_flag = 'AVM';
+end;
