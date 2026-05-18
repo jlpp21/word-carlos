@@ -1,94 +1,28 @@
-¡Mil disculpas! Tienes toda la razón, para una guía de accesos lo último que quieres es que falte información. No volveré a recortar la lista.
+Here are the templates in English, tailored for both JIRA and email.
 
-Aquí tienes la **Guía Maestra Completa**, sin recortes, incluyendo el proceso exacto de GitHub de tu captura y la lista íntegra de grupos AD:
+### 1. JIRA Comment
 
----
+*Since you are already inside the ticket context, this can be direct and concise.*
 
-# 🚀 GUÍA MAESTRA DE ACCESOS: PROYECTO AVALON
-
-## 1. 📂 GESTIÓN Y DOCUMENTACIÓN (Accesos Automáticos)
-
-* **Jira (Tareas y Épicas):** [Acceso Directo a Jira](https://www.atlassian.com/software/jira?campaign=19313277976&adgroup=144591217916&targetid=kwd-855725830&matchtype=e&network=g&device=c&device_model=&creative=697067534071&keyword=jira&placement=&target=&ds_eid=700000001558501&ds_e1=GOOGLE&gad_source=1&gad_campaignid=19313277976&gclid=EAIaIQobChMI8tXbtby2lAMVMYdQBh3ZlC0KEAAYASAAEgJFwvD_BwE).
-* **Épica Sunsetting:** [[CAPITAL-1249] Sunsetting and RDS Changes](https://www.google.com/search?q=https://jira.extranet.group/browse/CAPITAL-1249).
-* **Source Tracker:** [[METADATA-6102] Ingestion to AWS from SFS Mainframe](https://www.google.com/search?q=https://jira.extranet.group/browse/METADATA-6102).
-
-
-* **Confluence (Guías):**
-* **On-boarding Avalon:** [New Joiner On-Boarding Process - Avalon](https://www.google.com/search?q=https://confluence.extranet.group/display/AV/New%2BJoiner%2BOn-Boarding%2BProcess).
-* **Manual de Licencias:** [How to Request Confluence or Jira Account](https://www.google.com/search?q=https://confluence.extranet.group/display/SDLC/How%2Bto%2BRequest%2BConfluence%2Bor%2BJira%2BAccount).
-
-
-* **SharePoint (Archivos):** [Directorio Uk Hybrid Model - All Documents](https://www.google.com/search?q=https://sharepoint.group/sites/HybridModel-SANUK).
+> Hi David,
+> Hope you are well.
+> Regarding this work item for the Hometrack CSV ingestion, Imran Vali is ready to raise the CDF request to create the new data product tag value **"Hometrack"**.
+> Could you please reply directly to this ticket to confirm your ownership/approval as the proposed owner/HOD for this tag so we can proceed?
+> Many thanks,
+> [Your Name]
 
 ---
 
-## 2. 💻 ACCESOS TÉCNICOS (AWS ATHENA & GITHUB)
+### 2. Email Template
 
-### **A. GitHub (Proceso según captura)**
+*A bit more structured, including a clear subject line and context.*
 
-Para solicitar el acceso, debes seguir estos pasos:
-
-1. **Login:** Entra en [GitHub Enterprise](https://github.com/login) con tu cuenta corporativa.
-2. **Registro:** Al entrar, el sistema te pedirá completar el flujo de registro interno para vincular tu usuario a la organización de Santander.
-3. **Repositorios:** Una vez registrado, contacta con **Javier Tolosa** para que te dé permisos en los repositorios específicos de Avalon.
-
-### **B. AWS Athena (Queries SQL)**
-
-* **Portal de Petición:** [MyAccess2 - SailPoint IdentityIQ](https://www.google.com/search?q=https://myaccess2.group/).
-* **Permiso**: `sdlc_cdfcapitallake_businessowner`.
-* **Justificación**: *"Could you please provide access to Athena for querying Capital databases to work on day-to-day activities."*.
-* **Configuración de sesión (Consola AWS)**:
-* **Role**: El **3º de la lista** (el que termina en **227**).
-* **Región**: `Europe/London`.
-* **Workgroup**: `cdf-capitallake`.
-
-
-
----
-
-## 💾 3. HADOOP Y LISTA COMPLETA DE GRUPOS AD
-
-**Portal**: [myIT - Home](https://www.google.com/search?q=https://myit.group/) ⮕ `myAccess` ⮕ `Database` ⮕ `Hadoop` ⮕ `Manage Access` ⮕ **Request Hadoop Access**.
-
-**Lista de grupos para solicitar:**
-
-* DATA_HADOOP_CAPITAL
-* DATA_HADOOP_COMMON_CARDS_RETAIL_FUL
-* DATA_HADOOP_ANALYTICS_SSH_ACCESS
-* DATA_HADOOP_CAPITAL_CORP
-* DATA_HADOOP_LOANS_ALFA
-* DATA_HADOOP_RET_REFERENCE_FULL
-* DATA_HADOOP_RISK_FINANCE_CL_CUSTOMER_FULL
-* DATA_HADOOP_FINANCE_ACCOUNTING_FULL
-* DATA_HADOOP_SGCB_CAPITAL_FMBDR_FULL
-* DATA_HADOOP_EXP_CAPITAL_TOOLS_FULL
-* DATA_HADOOP_RET_TRANSACTION_FULL
-* DATA_HADOOP_RISK_FINANCE_CL_FULL
-* DATA_HADOOP_RET_CUSTOMER_FULL
-* DATA_HADOOP_COLLECTIONS_FULL
-* DATA_HADOOP_EXP_CAPITAL_FULL
-* DATA_HADOOP_RET_LENDING_FULL
-* DATA_HADOOP_CAPITAL_FULL
-* DATA_HADOOP_RISK_DM_FULL
-* DATA_HADOOP_RISK_FULL
-* DATA_HADOOP_RET_REFERENCE
-* DATA_HADOOP_DATA_VAULT
-* DATA_HADOOP_DATA_VAULT_FULL
-* DATA_HADOOP_STRUCTURAL
-* DATA_HADOOP_STRUCTURAL_FULL
-* DATA_HADOOP_EXP_CAPITAL_FULL (Re-confirmado)
-* DATA_HADOOP_EXP_FINANCE_FUL
-
----
-
-## 🆘 SOPORTE TÉCNICO Y MERCURY
-
-* **Mercury:** Para carpetas Windows, en MyIT usa la ruta `myaccess` ⮕ `windows` ⮕ `folder`.
-* **Problemas Técnicos:** Para cualquier error en **GitHub**, **AWS** o **permisos de red**, el contacto directo es **Javier Tolosa**.
-
----
-
-## 🔗 OTROS ENLACES
-
-* **ServiceNow (Tickets)**: [Incidents | ServiceNow](https://www.google.com/search?q=https://servicenow.group/).
-* **Guía técnica AWS**: [HOW TO - Get access to AWS Services](https://www.google.com/search?q=https://confluence.extranet.group/display/AV/HOW%2BTO%2B-%2BGet%2Baccess%2Bto%2BAWS%2BServices).
+> **Subject:** Ownership Confirmation Required: Data Product Tag "Hometrack"
+> Hi David,
+> Hope you are well.
+> I am writing regarding the ingestion of the 7 Hometrack CSV files into AWS for the Hybrid Mortgage model. Imran Vali is ready to raise the CDF request for the creation of the new data product tag value **"Hometrack"**.
+> Before he can proceed, he needs confirmation/approval from you as the proposed owner/HOD for this tag.
+> Could you please reply to this email or leave a quick comment on the JIRA ticket to confirm your ownership?
+> Thank you very much for your help.
+> Best regards,
+> [Your Name]
