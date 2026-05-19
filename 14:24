@@ -1,13 +1,33 @@
-Logic:
-if default = 1 and pip_ind = "Y" and sugg_sale_price ne . then do;
-lgd_recovery_valuation = sugg_sale_price;
-lgd_avm_hpi_flag = 'AVM';
-end;
-else if current_avm_confidence in (., 0) or current_valuation_amt_avm in (., 0) then do;
-lgd_recovery_valuation = current_valuation_amt;
-lgd_avm_hpi_flag = 'HPI';
-end;
-else do;
-lgd_recovery_valuation = current_valuation_amt_avm;
-lgd_avm_hpi_flag = 'AVM';
-end;
+Fyi, comentamos a ver si Podemos tener una idea de lo que estan pidiendo y temenos las preguntas preparadas para fin del dia de manana
+
+From: Escudero, Celia (Santander UK) <Celia.Escudero@santander.co.uk> 
+Sent: 19 May 2026 16:13
+To: Mora, Carlos (Santander UK) <Carlos.Mora@santander.co.uk>
+Cc: Reid, Guy (Santander UK) <Guy.Reid@santander.co.uk>; Gill, Robert <robert.gill@santander.co.uk>
+Subject: FIDs migration to PCCM
+
+Confidential
+
+Hi Carlos,
+
+I hope you are doing well.
+
+We are working on the decommissioning of the Fair Isaac Decisioning System (FIDS), a legacy platform historically used to support credit decisioning, customer segmentation, and the generation of key input flags used in IRB model processes, and replacement with the Power Curve Customer Management (PCCM) platform. 
+
+We will be going through governance for pre-notification approval in early June and are now looking to establish a granular implementation plan to kick off with implementation as soon as we get governance approvals, if possible. Rob suggested to share the requirement and discuss with you.
+
+In this context, we were able to gather work done last year to establish the FIDS to PCCM downstream requirements. I have attached an excel which I believe was created as part of the exercise last year. This has the specific field breakdown including mapping and required transformations.
+
+Requirement
+
+The core requirement is to decouple FIDS as inputs to these models and replace with PCCM inputs as displayed in the file - The current process to ingest the data into the models is the BSBASEL file
+•	There are 53 fields sourced from FIDS which are present in the BSBASEL file (Full List)
+•	28 of these fields are used in either the Banking or UPL behavioural Capital model  (Indicated in Column U)- This includes Pencil Limit (Row 37)
+•	The remaining 25 fields from FIDS are not used in the model  (Indicated in Column U)
+•	8 additional fields are to be sourced from PCCM (Indicated in Column U)
+I will be looking for some time to discuss. Feel free to forward the invite to your team.
+
+Let me know If you have any questions.
+
+Many thanks,
+Celia
